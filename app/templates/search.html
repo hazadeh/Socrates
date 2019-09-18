@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+{% block app_content %}
+    <div style="width: 100%; overflow: hidden;">
+        <div style="width: 600px; float: left;">
+
+                <h1>{{ ('Socratic Agent') }}</h1>
+
+                <table class = "table">
+                    <tr> <td width="80px">
+                       <form class="navbar-form navbar-left" method="get"
+                                action="{{ url_for('search') }}">
+                            <div class="form-group">
+                                {{ g.search_form.q(size=80, class='form-control',
+                                    placeholder=g.search_form.q.label.text, cols='80', rows='7', style="overflow-y: scroll" ) }}
+                                <br>
+                                {{ g.search_form.submit(class="btn btn-default btn-info", value="Next")}}
+                                {{ g.search_form.submit(class="btn btn-default btn-warning", value="Rephrase", disabled=rephrase) }}
+                                {{ g.search_form.submit(class="btn btn-default btn-danger", value="Refresh") }}
+
+                            </div>
+                        </form>
+                    </td></tr>
+                    <tr><td width="80px">
+                         <form class="navbar-form navbar-left" method="get"
+                                action="{{ url_for('reset') }}">
+                            <div class="form-group">
+                                {{ g.search_form.a(size=80, class='form-control',
+                                    placeholder=sysout, readonly=true, cols='80', rows='70', style="overflow-y: scroll") }}
+                                <!--{{ g.search_form.reset(class="btn btn-default btn-sm", value="Refresh") }}-->
+                                <!--,text="<span class='glyphicon glyphicon-refresh'></span> Refresh"-->
+                                <!--)}}-->
+                            </div>
+                        </form>
+                    </td></tr>
+                </table>
+            </div>
+
+        <div style="margin-left: 620px;">
+            <div>
+                <h1>{{ ('Search Results') }}</h1>
+                <!--<div class="navbar-form">-->
+                            <!--<img src="/static/wordcloud.png" alt=" "  />-->
+                <!--</div>-->
+                {% for article in articles %}
+                    {% include '_article.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

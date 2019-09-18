@@ -1,0 +1,68 @@
+<table class="table table-hover">
+        <tr>
+            <td width="70px">
+                <a href="https://google.com">
+                    <img src="/static/article.png"  width="80%" height="80%" />
+                </a>
+            </td>
+            <td>
+                    <a href={{ article.url }}>
+                        {{ article.title }}
+                    </a>
+                <br>
+                <span id={{article.id}}>
+                    <br>
+                    <div class="navbar-form">
+                            <img src="/static/wordcloud-{{article.id}}.png" alt=" "  />
+                    </div>
+                    <!--<strong>Categories:</strong>-->
+                    <!--{% for cat in article.analyzed_category %}-->
+                    <!--<br>-->
+                    <!--{{cat}}-->
+                    <!--{% endfor %}-->
+
+                    <!--<br><br>-->
+
+                    <!--<strong>Concepts:</strong>-->
+                    <!--{% for con in article.analyzed_concept %}-->
+                    <!--<br>-->
+                    <!--&nbsp&nbsp{{con}}-->
+                    <!--{% endfor %}-->
+                </span>
+            </td>
+            <td>
+                <button type="button"  id="idup" name="{{article.id}}"  class="btn btn-success glyphicon glyphicon-thumbs-up"  data-loading-text=" ... ">
+                    <!--<a href = '\upvote?id={{article.id}}'>-->
+                        {{ article.upvote }}
+                    <!--</a>-->
+                </button>
+                <button type="button" id="iddown" class="btn btn-failure glyphicon glyphicon-thumbs-down" data-loading-text=" ... ">
+                    {{ article.downvote }}
+                </button>
+            </td>
+        </tr>
+    </table>
+
+<!--$('#idup').click(function () {-->
+    <!--var cnt=4;-->
+    <!--var btn = $(this);-->
+    <!--btn.button('loading');-->
+    <!--setTimeout(function () {-->
+        <!--cnt++;-->
+        <!--btn.button('reset');-->
+        <!--btn.text('  ' + cnt);-->
+    <!--}, 1000);-->
+ <!--});-->
+
+<!--$('#testBtnDown').click(function () {-->
+    <!--var cnt=4;-->
+    <!--var btn = $(this);-->
+    <!--btn.button('loading');-->
+    <!--setTimeout(function () {-->
+        <!--if (cnt > 0) {-->
+            <!--cnt&#45;&#45;;-->
+        <!--}-->
+        <!--btn.button('reset');-->
+        <!--btn.text('  ' + cnt);-->
+    <!--}, 1000);-->
+ <!--});-->

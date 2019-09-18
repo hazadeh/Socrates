@@ -1,0 +1,7 @@
+.flaskenv
+.idea/
+__pycache__/
+app.zip
+socrates/
+log/*
+resources/excel/*
