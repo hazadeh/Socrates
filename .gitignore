@@ -5,3 +5,4 @@ app.zip
 socrates/
 log/*
 resources/excels/*
+!resources/excels/ExcelFilesHere
