@@ -3,16 +3,14 @@ import json
 import csv
 from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_watson.natural_language_understanding_v1 import Features, EntitiesOptions, KeywordsOptions, CategoriesOptions, ConceptsOptions, RelationsOptions, SemanticRolesOptions
-from ibm_cloud_sdk_core import IAMAuthenticator
 import requests
 import config
 
 
 dir = '../resources/excels'
-ES = config.Config.ELASTICSEARCH_URL
+ES = 'https://c6a38a3acbe14f75a290105b73c02bb7.us-central1.gcp.cloud.es.io:9243/'
 analyzed_fields = ['categories', 'concepts', 'entities',
                    'relations', 'semantic_role', 'keywords']
-authenticator = IAMAuthenticator('')
 
 
 def analyze(url):
