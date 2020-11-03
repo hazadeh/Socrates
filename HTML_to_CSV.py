@@ -10,14 +10,14 @@ import mammoth
 # open docx file and convert to html format
 with open("test.docx", "rb") as docx_file:
     result = mammoth.convert_to_html(docx_file)
-    html = result.value 
+    html = result.value
 
-#write onto .html file 
-with open ('test.html', 'w') as filehandle:
-    filehandle.write(html)    
+# write onto .html file
+with open('test.html', 'w', encoding="utf8") as filehandle:
+    filehandle.write(html)
 
 # Opening the HTML file as a file
-with open('test.html', 'r') as file:
+with open('test.html', 'r', encoding="utf8") as file:
     # Reading the contents of the file into varilable page
     page = file.read()
 
